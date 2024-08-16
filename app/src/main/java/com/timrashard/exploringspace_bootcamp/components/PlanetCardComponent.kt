@@ -2,6 +2,7 @@ package com.timrashard.exploringspace_bootcamp.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,10 +36,13 @@ import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceWhite
 import com.timrashard.exploringspace_bootcamp.ui.theme.kanit
 
 @Composable
-fun PlanetCardComponent() {
+fun PlanetCardComponent(cardClick: () -> Unit = {}) {
     Box(
         modifier = Modifier
             .size(width = 300.dp, height = 375.dp)
+            .clickable {
+                cardClick()
+            }
     ) {
         PlanetInfoComponent(modifier = Modifier.align(Alignment.BottomCenter))
 
