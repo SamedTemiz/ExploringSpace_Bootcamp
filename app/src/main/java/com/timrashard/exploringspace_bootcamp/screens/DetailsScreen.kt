@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.timrashard.exploringspace_bootcamp.R
 import com.timrashard.exploringspace_bootcamp.components.PlanetVideoPlayCardComponent
 import com.timrashard.exploringspace_bootcamp.components.PlayVideoCardComponent
@@ -27,10 +27,16 @@ import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceBlack
 import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceLightGray
 
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(navController: NavController) {
     Scaffold(
         topBar = {
-            TopAppBarComponent(isDetailScreen = true)
+            TopAppBarComponent(isDetailScreen = true, backButtonClick = {
+                navController.navigate("home") {
+                    popUpTo(navController.graph.startDestinationId) {
+                        inclusive = true
+                    }
+                }
+            })
         },
         containerColor = SpaceBlack,
     ) { paddingValues ->
@@ -88,5 +94,5 @@ fun DetailsScreen() {
 @Preview(showBackground = true)
 @Composable
 fun DetailsScreenPreview() {
-    DetailsScreen()
+    DetailsScreen(navController = rememberNavController())
 }

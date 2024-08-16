@@ -1,6 +1,5 @@
 package com.timrashard.exploringspace_bootcamp.screens
 
-import android.widget.Space
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -17,6 +16,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.timrashard.exploringspace_bootcamp.R
 import com.timrashard.exploringspace_bootcamp.components.ExploreCardComponent
 import com.timrashard.exploringspace_bootcamp.components.HeaderComponent
@@ -26,7 +27,7 @@ import com.timrashard.exploringspace_bootcamp.components.TopAppBarComponent
 import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceBlack
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBarComponent(title = "Hello! Samed", profileImage = R.drawable.cakir)
@@ -51,11 +52,17 @@ fun HomeScreen() {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 items(2) {
-                    PlanetCardComponent()
+                    PlanetCardComponent(cardClick = { navController.navigate("details") })
                 }
             }
 
-            ExploreCardComponent(modifier = Modifier.padding(start = 32.dp, end = 32.dp, bottom = 24.dp))
+            ExploreCardComponent(
+                modifier = Modifier.padding(
+                    start = 32.dp,
+                    end = 32.dp,
+                    bottom = 24.dp
+                )
+            )
         }
     }
 }
@@ -63,5 +70,5 @@ fun HomeScreen() {
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview() {
-    HomeScreen()
+    HomeScreen(navController = rememberNavController())
 }

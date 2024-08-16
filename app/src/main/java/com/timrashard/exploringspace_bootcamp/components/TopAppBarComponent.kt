@@ -2,6 +2,7 @@ package com.timrashard.exploringspace_bootcamp.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -31,7 +32,8 @@ import com.timrashard.exploringspace_bootcamp.ui.theme.kanit
 fun TopAppBarComponent(
     title: String? = null,
     profileImage: Int? = null,
-    isDetailScreen: Boolean = false
+    isDetailScreen: Boolean = false,
+    backButtonClick: (() -> Unit)? = {}
 ) {
     Box(
         contentAlignment = Alignment.CenterStart,
@@ -47,7 +49,13 @@ fun TopAppBarComponent(
                 profileImage = profileImage ?: R.drawable.ic_person
             )
         } else {
-            DetailTopBar()
+            DetailTopBar(
+                backButtonClick = {
+                    if (backButtonClick != null) {
+                        backButtonClick()
+                    }
+                }
+            )
         }
     }
 }
@@ -82,7 +90,9 @@ fun MainTopBar(
 }
 
 @Composable
-fun DetailTopBar() {
+fun DetailTopBar(
+    backButtonClick: () -> Unit = {}
+) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -96,7 +106,11 @@ fun DetailTopBar() {
                 painter = painterResource(id = R.drawable.ic_left_arrow),
                 contentDescription = "Back",
                 tint = SpaceWhite,
-                modifier = Modifier.size(24.dp)
+                modifier = Modifier
+                    .size(24.dp)
+                    .clickable {
+                        backButtonClick()
+                    }
             )
             Text(
                 text = "Back",
