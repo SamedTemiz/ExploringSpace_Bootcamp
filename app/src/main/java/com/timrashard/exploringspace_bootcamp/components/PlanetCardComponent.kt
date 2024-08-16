@@ -72,7 +72,15 @@ fun PlanetInfoComponent(modifier: Modifier) {
                 .fillMaxWidth()
                 .fillMaxHeight(0.60f)
         ) {
-            CircleBookmarkIconComponent(modifier = Modifier.align(Alignment.TopEnd))
+            CircleIconComponent(
+                icon = R.drawable.ic_bookmark,
+                background = SpaceBlack,
+                tint = SpaceWhite,
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(end = 16.dp)
+                    .size(56.dp)
+            )
 
             Column(
                 verticalArrangement = Arrangement.Center,
@@ -83,8 +91,6 @@ fun PlanetInfoComponent(modifier: Modifier) {
             ) {
                 Text(text = "Planet", fontSize = 18.sp, fontFamily = kanit, color = SpaceWhite)
 
-                Spacer(Modifier.height(8.dp))
-
                 Text(
                     text = "The Earth",
                     fontSize = 36.sp,
@@ -92,8 +98,6 @@ fun PlanetInfoComponent(modifier: Modifier) {
                     fontWeight = FontWeight.Bold,
                     color = SpaceWhite
                 )
-
-                Spacer(Modifier.height(8.dp))
 
                 Text(
                     text = "The basics knowlage of The Earth",
@@ -106,24 +110,6 @@ fun PlanetInfoComponent(modifier: Modifier) {
     }
 }
 
-@Composable
-fun CircleBookmarkIconComponent(modifier: Modifier) {
-    Box(
-        modifier = modifier
-            .padding(end = 16.dp)
-            .size(56.dp)
-            .clip(CircleShape)
-            .background(SpaceBlack),
-        contentAlignment = Alignment.Center
-    ) {
-        Icon(
-            painter = painterResource(id = R.drawable.ic_bookmark),
-            contentDescription = "Bookmark",
-            tint = SpaceWhite,
-            modifier = Modifier.fillMaxSize(0.6f)
-        )
-    }
-}
 
 @Preview(showBackground = true)
 @Composable
