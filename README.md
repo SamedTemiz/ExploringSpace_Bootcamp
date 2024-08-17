@@ -18,6 +18,6 @@ For the 3rd assignment of the bootcamp I attended on Jetpack Compose, I created 
 
 I tried to code the design shown in this link:
 
-[Space Learning App UI Animation - Adom (Dribble)](https://dribbble.com/shots/21390645-Space-Learning-App-UI-Animation)
+[Space Learning App UI Animation - Adom (Dribble)](http://dribbble.com/shots/21390645-Space-Learning-App-UI-Animation)
 
 Additionally, I added Turkish language support and a Light Theme.
