@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ExploringSpace_Bootcamp</string>
+    
+    <string name="welcome_message">Merhaba! Samed</string>
+    <string name="welcome_message_default">Merhaba! Misafir</string>
+    <string name="back_button">Geri</string>
+    <string name="search_field_placeholder">Bir şey ara…</string>
+    <string name="header_popular">En Popüler</string>
+    <string name="see_all">Tümünü Gör</string>
+    <string name="planet_card_type">Gezegen</string>
+    <string name="planet_card_header">Dünya</string>
+    <string name="planet_short_description">Dünya\'nın Temel Bilgisi</string>
+    <string name="explore_header">Uzayda Nasıl Seyahat Edileceğini Öğrenin</string>
+    <string name="explore_description">Burada roket bilimi hakkında bilgi edinebilirsiniz</string>
+    <string name="explore_button">Keşfet</string>
+    <string name="planet_detail_description">Dünya, Güneş\'ten üçüncü gezegen olup, yaşam barındığı bilinen tek astronomik cisimdir. Güneş Sistemi\'nde büyük miktarda su bulunmasına rağmen, yalnızca Dünya sıvı yüzey suyu barındırmaktadır. Dünya\'nın yüzeyinin yaklaşık %71\'i okyanuslarla kaplıdır ve bu, Dünya\'nın kutup buzullarını, gölleri ve nehirlerini büyük ölçüde gölgede bırakır.</string>
+    <string name="planet_video_category1">Giriş</string>
+    <string name="planet_video_category2">Dünya Hakkında Bilgiler</string>
+</resources>

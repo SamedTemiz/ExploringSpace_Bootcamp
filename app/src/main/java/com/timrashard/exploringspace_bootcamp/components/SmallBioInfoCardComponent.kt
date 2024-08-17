@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,8 +19,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.timrashard.exploringspace_bootcamp.R
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceLightGray
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceWhite
 import com.timrashard.exploringspace_bootcamp.ui.theme.kanit
 
 @Composable
@@ -41,7 +40,7 @@ fun SmallBioInfoCardComponent(){
             text = "Neil Armstrong",
             fontSize = 18.sp,
             fontFamily = kanit,
-            color = SpaceWhite,
+            color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier.padding(start = 16.dp)
         )
 
@@ -60,7 +59,7 @@ fun SmallBioInfoCardComponent(){
                     fontSize = 18.sp,
                     fontFamily = kanit,
                     fontWeight = FontWeight.Bold,
-                    color = SpaceWhite,
+                    color = MaterialTheme.colorScheme.onBackground,
                     modifier = Modifier.alignByBaseline()
                 )
 
@@ -69,7 +68,7 @@ fun SmallBioInfoCardComponent(){
                     fontSize = 12.sp,
                     fontFamily = kanit,
                     fontWeight = FontWeight.Bold,
-                    color = SpaceLightGray,
+                    color = MaterialTheme.colorScheme.tertiary,
                     modifier = Modifier
                         .padding(start = 4.dp)
                         .alignByBaseline()

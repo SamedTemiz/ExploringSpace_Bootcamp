@@ -2,17 +2,16 @@ package com.timrashard.exploringspace_bootcamp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
-
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
-
-// App Theme Color
-val SpaceBlack = Color(0xFF000000)
-val SpacePurple = Color(0xFF8f53fc)
-val SpaceGray = Color(0xFF1a1a1a)
-val SpaceLightGray = Color(0xFF6b6d6f)
+// App Theme Color - Dark Theme
+val SpaceBackground = Color(0xFF000000)
+val SpacePrimary = Color(0xFF8f53fc)
+val SpaceSecondary = Color(0xFF1a1a1a)
+val SpaceTertiary = Color(0xFF6b6d6f)
 val SpaceWhite = Color(0xFFFFFFFF)
+
+// App Theme Color - Light Theme
+val LightSpaceBackground = Color(0xFFFEF7FF)
+val LightSpacePrimary = Color(0xFF6200EE)
+val LightSpaceSecondary = Color(0xFF9C89B3)
+val LightSpaceTertiary = Color(0xFFC3C4C6)
+val LightSpaceFont = Color(0xFF1F1926)
