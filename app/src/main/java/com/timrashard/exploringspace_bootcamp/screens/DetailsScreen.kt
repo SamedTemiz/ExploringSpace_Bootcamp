@@ -9,11 +9,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -23,8 +25,6 @@ import com.timrashard.exploringspace_bootcamp.components.PlanetVideoPlayCardComp
 import com.timrashard.exploringspace_bootcamp.components.PlayVideoCardComponent
 import com.timrashard.exploringspace_bootcamp.components.SmallBioInfoCardComponent
 import com.timrashard.exploringspace_bootcamp.components.TopAppBarComponent
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceBlack
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceLightGray
 
 @Composable
 fun DetailsScreen(navController: NavController) {
@@ -38,7 +38,7 @@ fun DetailsScreen(navController: NavController) {
                 }
             })
         },
-        containerColor = SpaceBlack,
+        containerColor = MaterialTheme.colorScheme.background,
     ) { paddingValues ->
         Column(
             modifier = Modifier
@@ -69,8 +69,8 @@ fun DetailsScreen(navController: NavController) {
                 SmallBioInfoCardComponent()
 
                 Text(
-                    "Earth is the third planet from the Sun and the only astronomical object known to harbor life. While large volumes of water can be found throughout the Solar System, only Earth sustains liquid surface water. About 71% of Earth's surface is made up of the ocean, dwarfing Earth's polar ice, lakes, and rivers. ",
-                    color = SpaceLightGray,
+                    text = stringResource(id = R.string.planet_detail_description),
+                    color = MaterialTheme.colorScheme.onBackground,
                     modifier = Modifier.fillMaxWidth()
                 )
 
@@ -79,11 +79,11 @@ fun DetailsScreen(navController: NavController) {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     item {
-                        PlayVideoCardComponent(title = "Introductions", videoCount = 2)
+                        PlayVideoCardComponent(title = stringResource(id = R.string.planet_video_category1), videoCount = 2)
                     }
 
                     item {
-                        PlayVideoCardComponent(title = "Facts About Earth", videoCount = 4)
+                        PlayVideoCardComponent(title = stringResource(id = R.string.planet_video_category2), videoCount = 4)
                     }
                 }
             }
@@ -91,7 +91,7 @@ fun DetailsScreen(navController: NavController) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, locale = "tr")
 @Composable
 fun DetailsScreenPreview() {
     DetailsScreen(navController = rememberNavController())

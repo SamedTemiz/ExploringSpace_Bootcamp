@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">ExploringSpace_Bootcamp</string>
+    
+    <string name="welcome_message">Hello! Samed</string>
+    <string name="welcome_message_default">Hello! User</string>
+    <string name="back_button">Back</string>
+    <string name="search_field_placeholder">Search Anything…</string>
+    <string name="header_popular">Popular Now</string>
+    <string name="see_all">See all</string>
+    <string name="planet_card_type">Planet</string>
+    <string name="planet_card_header">The Earth</string>
+    <string name="planet_short_description">The basics knowledge of The Earth</string>
+    <string name="explore_header">Learn How To Travel In Space</string>
+    <string name="explore_description">You can learn about rocket science here</string>
+    <string name="explore_button">Explore</string>
+    <string name="planet_detail_description">Earth is the third planet from the Sun and the only astronomical object known to harbor life. While large volumes of water can be found throughout the Solar System, only Earth sustains liquid surface water. About 71% of Earth\'s surface is made up of the ocean, dwarfing Earth\'s polar ice, lakes, and rivers.</string>
+    <string name="planet_video_category1">Introductions</string>
+    <string name="planet_video_category2">Facts About Earth</string>
 </resources>

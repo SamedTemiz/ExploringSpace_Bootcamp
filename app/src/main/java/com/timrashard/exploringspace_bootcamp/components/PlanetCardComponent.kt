@@ -6,17 +6,14 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,15 +21,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.timrashard.exploringspace_bootcamp.R
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceBlack
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceGray
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceLightGray
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceWhite
+import com.timrashard.exploringspace_bootcamp.ui.theme.ExploringSpace_BootcampTheme
 import com.timrashard.exploringspace_bootcamp.ui.theme.kanit
 
 @Composable
@@ -68,7 +63,7 @@ fun PlanetInfoComponent(modifier: Modifier) {
             .fillMaxWidth()
             .fillMaxHeight(0.75f)
             .clip(shape = RoundedCornerShape(32.dp))
-            .background(SpaceGray)
+            .background(MaterialTheme.colorScheme.secondary)
     ) {
         Box(
             modifier = Modifier
@@ -78,8 +73,8 @@ fun PlanetInfoComponent(modifier: Modifier) {
         ) {
             CircleIconComponent(
                 icon = R.drawable.ic_bookmark,
-                background = SpaceBlack,
-                tint = SpaceWhite,
+                background = MaterialTheme.colorScheme.background,
+                tint = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier
                     .align(Alignment.TopEnd)
                     .padding(end = 16.dp)
@@ -93,21 +88,26 @@ fun PlanetInfoComponent(modifier: Modifier) {
                     .padding(start = 20.dp)
                     .align(Alignment.BottomStart)
             ) {
-                Text(text = "Planet", fontSize = 18.sp, fontFamily = kanit, color = SpaceWhite)
-
                 Text(
-                    text = "The Earth",
-                    fontSize = 36.sp,
+                    text = stringResource(id = R.string.planet_card_type),
+                    fontSize = 18.sp,
                     fontFamily = kanit,
-                    fontWeight = FontWeight.Bold,
-                    color = SpaceWhite
+                    color = MaterialTheme.colorScheme.onSecondary
                 )
 
                 Text(
-                    text = "The basics knowlage of The Earth",
+                    text = stringResource(id = R.string.planet_card_header),
+                    fontSize = 36.sp,
+                    fontFamily = kanit,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSecondary
+                )
+
+                Text(
+                    text = stringResource(id = R.string.planet_short_description),
                     fontSize = 14.sp,
                     fontFamily = kanit,
-                    color = SpaceLightGray
+                    color = MaterialTheme.colorScheme.tertiary
                 )
             }
         }
@@ -118,12 +118,14 @@ fun PlanetInfoComponent(modifier: Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun Preview() {
-    Surface(color = SpaceBlack, modifier = Modifier.fillMaxSize()) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            PlanetCardComponent()
+    ExploringSpace_BootcampTheme {
+        Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                PlanetCardComponent()
+            }
         }
     }
 }

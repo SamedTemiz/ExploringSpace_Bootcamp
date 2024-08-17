@@ -3,6 +3,10 @@ package com.timrashard.exploringspace_bootcamp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -17,13 +21,18 @@ class MainActivity : ComponentActivity() {
             ExploringSpace_BootcampTheme {
                 val navController = rememberNavController()
 
-                NavHost(navController = navController, startDestination = "home"){
-                    composable("home"){
-                        HomeScreen(navController = navController)
-                    }
+                Surface(
+                    color = MaterialTheme.colorScheme.background,
+                    modifier = Modifier.fillMaxSize(),
+                ){
+                    NavHost(navController = navController, startDestination = "home"){
+                        composable("home"){
+                            HomeScreen(navController = navController)
+                        }
 
-                    composable("details"){
-                        DetailsScreen(navController = navController)
+                        composable("details"){
+                            DetailsScreen(navController = navController)
+                        }
                     }
                 }
             }

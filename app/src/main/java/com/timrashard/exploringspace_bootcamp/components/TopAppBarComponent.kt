@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,13 +20,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.timrashard.exploringspace_bootcamp.R
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceBlack
-import com.timrashard.exploringspace_bootcamp.ui.theme.SpaceWhite
 import com.timrashard.exploringspace_bootcamp.ui.theme.kanit
 
 @Composable
@@ -40,12 +40,12 @@ fun TopAppBarComponent(
         modifier = Modifier
             .fillMaxWidth()
             .height(80.dp)
-            .background(SpaceBlack)
+            .background(MaterialTheme.colorScheme.background)
             .padding(horizontal = 32.dp)
     ) {
         if (!isDetailScreen) {
             MainTopBar(
-                title = title ?: "Hello! User",
+                title = title ?: stringResource(id = R.string.welcome_message_default),
                 profileImage = profileImage ?: R.drawable.ic_person
             )
         } else {
@@ -75,7 +75,7 @@ fun MainTopBar(
             fontFamily = kanit,
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold,
-            color = SpaceWhite
+            color = MaterialTheme.colorScheme.onBackground
         )
 
         Image(
@@ -105,7 +105,7 @@ fun DetailTopBar(
             Icon(
                 painter = painterResource(id = R.drawable.ic_left_arrow),
                 contentDescription = "Back",
-                tint = SpaceWhite,
+                tint = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier
                     .size(24.dp)
                     .clickable {
@@ -113,8 +113,8 @@ fun DetailTopBar(
                     }
             )
             Text(
-                text = "Back",
-                color = SpaceWhite,
+                text = stringResource(id = R.string.back_button),
+                color = MaterialTheme.colorScheme.onBackground,
                 fontSize = 24.sp,
                 modifier = Modifier.padding(start = 16.dp)
             )
@@ -123,7 +123,7 @@ fun DetailTopBar(
         Icon(
             painter = painterResource(id = R.drawable.ic_bookmark),
             contentDescription = "Bookmark",
-            tint = SpaceWhite,
+            tint = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier.size(36.dp)
         )
     }
