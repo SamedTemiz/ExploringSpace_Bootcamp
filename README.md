@@ -2,7 +2,7 @@
 
 Jetpack Compose ile ilgili katıldığım bootcamp'in 3. ödevi olarak bu projeyi oluşturdum. Bizlerden temel compose elementlerini kullanarak bir sayfa tasarlanması istendi.
 
-[Space Learning App UI Animation - Adom (Dribble)](https://dribbble.com/shots/21390645-Space-Learning-App-UI-Animation)
+[Space Learning App UI Animation - Adom (Dribble)](https://dribbble.com/shots/21390645-Space-Learning-App-UI-Animation?utm_source=Clipboard_Shot&utm_campaign=uiuxadom&utm_content=Space%20Learning%20App%20UI%20Animation&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=uiuxadom&utm_content=Space%20Learning%20App%20UI%20Animation&utm_medium=Social_Share)
 
 Bu linkteki tasarımın aynısını kodlamaya çalıştım. 
 
